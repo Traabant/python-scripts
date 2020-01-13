@@ -12,7 +12,7 @@ class Log():
         self.analyze_last_updates()
         self.talk_to_user()
 
-     def find_integrity_check(self, client):
+    def find_integrity_check(self, client):
         """
         :param  ID: int
         :param name: string , clients name,
@@ -32,16 +32,11 @@ class Log():
                 client.date_logged = datetime.datetime.strptime(cur_line[5], "VE2%Y%m%d")    
                 client.last_update = datetime.datetime.strptime(cur_line[1], "DAT%Y%m%d")       
                 self.last_updates.append(client)                
-                break
-                
+                break            
 
             if (cur_pos == 0):
-                context = {
-                    "ID": client.ID,
-                    "name": client.name,
-                    "status": "not found"
-                }
-                self.problems.append(context)
+                client.status = "not found"
+                self.problems.append(client)
                 break
         
     def analyze_last_updates(self):
