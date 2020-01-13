@@ -12,24 +12,7 @@ class Log():
         self.analyze_last_updates()
         self.talk_to_user()
 
-    # def parse_intergryty_data(self, client, data):  
-    #     """
-    #     :param ID: int , clients ID,
-    #     :param name: string , clients name,
-    #     :param data: list, with spited single line from log
-    #     :return context: dict
-    #     """
-    #     context = {
-    #         "ID": client.ID,
-    #         "name": client.name,
-    #         "status": data[3],
-    #         "last_update": datetime.datetime.strptime(data[5], "VE2%Y%m%d"),
-    #         "date_logged": datetime.datetime.strptime(data[1], "DAT%Y%m%d"),
-    #         }          
-        
-    #     return context
-
-    def find_integrity_check(self, client):
+     def find_integrity_check(self, client):
         """
         :param  ID: int
         :param name: string , clients name,
@@ -112,6 +95,7 @@ class Log():
         pass
         
 
+
 class Client():
     """
     :param source: str, Name;ID\\n
@@ -126,7 +110,7 @@ class Client():
         ID = ID[0:5]
         path = os.path.join(files_location,ID) 
         path = path + ".log"        
-        
+
         self.name = name
         self.ID = ID
         self.path = path
