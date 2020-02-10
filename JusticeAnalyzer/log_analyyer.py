@@ -70,7 +70,7 @@ class Log():
         """
         csv_name = "JusticeAnalyzer\ID.csv"
         parsed_list = []
-        with open(csv_name, "r") as f:
+        with open(csv_name, "r", encoding="UTF-8") as f:
             lines = f.readlines()
             for line in lines:
                 c = Client(line)
