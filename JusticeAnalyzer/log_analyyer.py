@@ -26,7 +26,8 @@ class Log():
         while True:
             cur_pos -= 1
             cur_line = (client.logs[cur_pos])
-            cur_line = cur_line.split("\x10")            
+            cur_line = cur_line.split("\x10")   
+            # print (f"{client.name}, {client.ID}, {client.path}")      
             if (cur_line[3] == str_to_check):    
                 client.status = cur_line[3] 
                 client.date_logged = datetime.datetime.strptime(cur_line[5], "VE2%Y%m%d")    
@@ -100,7 +101,8 @@ class Client():
 
     def __init__(self, source):        
         
-        files_location = "\\\\vzdalsprav\\_LOG\\"
+        # files_location = "\\\\vzdalsprav\\_LOG\\"
+        files_location = "d:\\tmp\\_LOG\\_LOG\\"
         name, ID = source.split(";", 1)    
         ID = ID[0:5]
         path = os.path.join(files_location,ID) 
