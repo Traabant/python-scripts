@@ -103,8 +103,14 @@ class Consumption:
             self.total_mileage = int(round(self.last_mileage - self.first_mileage))
             self.date_added = self.working_list[0][0]
             self.total_fuel = 0
-            for i, item in enumerate(self.working_list):
+            
+            # For better accuracy loop starts at 1
+            # first entry is last fueling, that doesnt have any milleg corresponded to it
+            i = 1
+            while i < len(self.working_list):
                 self.total_fuel += float(self.working_list[i][2])
+                i += 1
+          
             self.total_consuption = (self.total_fuel / self.total_mileage) * 100
         else:
             print(f'Error downloading url {url} with status code {self.response.status_code}')

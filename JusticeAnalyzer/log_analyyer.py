@@ -101,8 +101,8 @@ class Client():
 
     def __init__(self, source):        
         
-        # files_location = "\\\\vzdalsprav\\_LOG\\"
-        files_location = "d:\\SIBA\Poznámky k zakazníkum\\Justice\LOG\\"
+        files_location = "\\\\vzdalsprav\\_LOG\\"
+        #files_location = "d:\\SIBA\Poznámky k zakazníkum\\Justice\LOG\\"
         name, ID = source.split(";", 1)    
         ID = ID[0:5]
         path = os.path.join(files_location,ID) 
