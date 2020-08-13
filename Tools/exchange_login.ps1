@@ -9,3 +9,6 @@ Import-PSSession $Session
 # Overeni funkcnosti
 Get-Mailbox -ResultSize unlimited
 
+# uzavreni spojeni
+# $s = Get-PSSession
+# Remove-PSSession -Session $s
